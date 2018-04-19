@@ -1,0 +1,549 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    }
+    
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#f5f6fa;
+    
+}
+
+h1 {
+    font-size:1.5em; 
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+    padding-top: 10px;
+}
+
+h2 {
+    font-size:2em; 
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #50a3a2;
+}
+  
+
+#ad { color: #4183D7;}
+#info { margin-left: 200px;}
+
+/*--date pour les histogrammes--*/
+#dates {
+      color:#555555;
+      margin: 80px 0 20px 130px;
+      font-size: 20px;
+}
+
+.dateTrie {
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.valider {
+    padding:6px 0 6px 0;
+    font:bold 13px;
+    background:white;
+    color:#555;
+    border-radius:2px;
+    width:100px;
+    border:1px solid #ccc;
+    margin-left: 15px;
+}
+.valider:hover {
+    color: #f5f5f5;
+    background-color: #86E2D5;
+}
+
+/*--histogramme, camembert... --*/
+.statistique {
+    width: 700px; 
+    height: 400px;
+    border-radius: 13px;
+    position: absolute;
+    margin: 0 20px 0 20px;
+}
+
+/*pour mettre les diagrammes cote a cote*/
+#piechart {right:50%;}
+#scatterchart {left: 50%;}
+#columnchart_values {left: 50%;}
+
+#circle {   position: absolute;
+            top: 58%; left: 50%; 
+            transform: translate(-50%, -50%);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute; /* postulat de départ */
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    background-color: white;;
+    text-decoration: none;
+    color: #50a3a2;
+    border: 1px solid #4DC3FA;
+}
+
+li a:hover:not(.active) {
+    background-color: #fafafa;
+}
+
+.active {
+    background-color: #C5EFF7;
+}
+
+
+table {
+    
+    text-align: center;
+    overflow: hidden;
+    width: 90%;
+    
+    padding-left: 10%;
+    display: table;
+    /*padding: 0 0 8em 0;*/
+}
+
+table th {
+    text-align: center;
+    color:#D5DDE5;;
+    background:#1b1e24;
+    border-bottom:4px solid #9ea7af;
+    border: 1px solid #343a45;
+    padding: 12px;
+    font-weight: 100;
+    font-size:18px;
+    background-color: rgb(13, 94, 109);
+}
+
+table th h1 {
+    font-weight: bold;
+    font-size: 0.75em;
+    text-align: left;
+    color: #ffffff;
+}
+
+table td {
+    background-color: white;
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+/* Background-color of the odd rows */
+table tr:nth-child(odd) {
+    background-color: rgb(228, 245, 248);
+}
+
+/* Background-color of the even rows */
+table tr:nth-child(even) {
+    background-color: rgb(187, 225, 228);
+}
+
+table tr:hover td {
+        background-color: #d0e8fb;
+}
+table th:hover::after {
+        background-color: #d0e8fb;
+}
+
+table td:first-child { color: #FB667A; }
+
+table td {
+    color: #555555;
+}
+
+table tr:hover {
+    background-color: rgb(221, 26, 172);
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+ }
+ 
+table td:hover {
+        background-color: rgb(184, 185, 189);
+        font-weight: bold;
+        transition-delay: 0s;
+        transition-duration: 0.4s;
+        transition-property: all;
+        transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+    table td:nth-child(4),
+    table th:nth-child(4) { display: none; }
+}
+
+.supprimer {
+        padding:6px 0 6px 0;
+        font:bold 13px;
+        background:#f5f5f5;
+        color:#555;
+        border-radius:2px;
+        width:100px;
+        border:1px solid #ccc;
+}
+.supprimer:hover {
+        color: #f5f5f5;
+        background-color: #EC644B;
+}
+
+.deconnexion {
+        position : absolute;
+        right : 30px;     /* placcer le bouton sur la droite*/
+        top : 20px;
+
+        width:100px;
+        height:100px;
+        background:#fafafa;
+        box-shadow:2px 2px 8px #aaa;
+        font:bold 12px 'Open Sans';
+        border-radius:50%;
+        color:rgb(180, 0, 0);
+}
+
+.deconnexion:hover {
+        color: #f5f5f5;
+        background-color: rgb(121, 7, 7);
+        
+}
+
+#messageAjout {
+        color: red;
+        margin-left: 40%;
+        margin-right: 40%;
+}
+
+
+/* ------------------------------------------*/
+/* EDITION D'UN BON DE COMMANDE */
+
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+textarea:focus, input:focus {
+    border-color: transparent !important;
+  }
+  /*ce qui est écrit en caché*/
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+
+/*---------------------------------------------*/
+.contact100-header {
+    width: 100%;
+    height: 80px;
+    
+    padding: 10px 35px;
+  }
+  
+  .contact100-header-logo img {
+    max-height: 23px;
+  }
+  
+  
+  
+/*==================================================================
+[ Content container ]*/
+.container-contact100 {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /*padding: 15px;*/
+    position: relative;
+    z-index: 10;
+  }
+  
+  .wrap-contact100 {
+    width: 560px;
+    background: rgba(241, 241, 241, 0.733); /*COULEUR DU FORMULAIRE*/
+    border-radius: 3px;
+    position: relative;
+  }
+  
+  /*==================================================================
+  [ Title form ]*/
+  .contact100-form-title {
+    
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-top: 1em;
+    padding-bottom: 0em;
+    
+    
+    font-family: 'open sans';
+    font-size: 30px;
+    color: #fff;
+    line-height: 1.2;
+    
+  
+    width: 100%;
+    min-height: 128px;
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    overflow: hidden;
+    
+    padding: 30px 15px 30px 15px;
+  }
+  
+  .contact100-form-title::before {  /*pour mettre un filtre blanc sur l'image*/
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(67,67,67,0.6);
+  }
+  
+  
+  /*==================================================================
+  [ Form ]*/
+  
+  form {
+      color:#555555;
+      margin-bottom: 50px;
+  }
+  
+  .contact100-form {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 55px 48px 55px;
+  }
+  
+  
+  /*------------------------------------------------------------------
+  [ Input ]*/
+  
+  .wrap-input100 {
+    width: 100%;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    margin-bottom: 15px
+  }
+  
+  .label-input100 {
+    font-size: 18px;
+    color: #999999;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    top: 0;
+    left: 2px;
+  }
+  
+  .label-input100.rs1 {
+    height: 60px;
+  }
+  
+  .input100 {
+    /*display: block;*/
+    width: 100%;
+    background: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.2;
+    padding: 0 25px 0 60px;
+  }
+  
+  input.input100 {
+    height: 55px;
+  }
+  
+  textarea.input100 {
+    min-height: 162px;
+    padding-top: 22px;
+    padding-bottom: 15px;
+  }
+ /*---------------------------------------------*/
+
+.focus-input100 {   /*pour réagir quand on clique*/
+    position: absolute;
+    display: block;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    top: -1px;
+    left: -1px;
+    pointer-events: none;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: rgb(13, 94, 109); /*couleur de l'encadré bleu */
+  
+    visibility: hidden;
+    opacity: 0;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    -webkit-transform: scaleX(1.1) scaleY(1.3);
+    -moz-transform: scaleX(1.1) scaleY(1.3);
+    -ms-transform: scaleX(1.1) scaleY(1.3);
+    -o-transform: scaleX(1.1) scaleY(1.3);
+    transform: scaleX(1.1) scaleY(1.3);
+  }
+  
+  .input100:focus + .focus-input100 {
+    visibility: visible;
+    opacity: 1;
+  
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  
+
+
+  /*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 17px;
+  }
+  
+  .contact100-form-btn {
+    font-family: Montserrat-Bold;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 42px;
+    border-radius: 21px;
+    background: rgb(13, 94, 109);
+  
+    box-shadow: 0 10px 30px 0px rgba(132, 106, 221, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(132, 106, 221, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(132, 106, 221, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(132, 106, 221, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(132, 106, 221, 0.5);
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .contact100-form-btn:hover {
+    background: #333333;
+    box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  }
+  
+  
